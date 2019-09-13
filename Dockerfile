@@ -24,12 +24,12 @@ COPY --chown=www-data:www-data ./roundcube/ /var/www/html/
 
 # Определяем переменные для подключения к базе данных RoundCube
 ENV RC_DB_USER "round_cube_user"
-ENV RC_DB_PASSWORD "RoundPaqqwxc12W"
+ENV RC_DB_PASSWORD "round_cube_password"
 ENV RC_DB_NAME "round_cube"
-ENV RC_DB_HOST "80.211.64.250"
-ENV MAIL_SERVER_HOST "80.211.64.250"
-ENV SIEVE_HOST "80.211.64.250"
-ENV SIEVE_PORT "2000"
+ENV RC_DB_HOST "db_host"
+ENV MAIL_SERVER_HOST "mail_host"
+ENV SIEVE_HOST "sieve_host"
+ENV SIEVE_PORT "sieve_port"
 
 # Перенаправляем вывод логов в stdout и stderr
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \

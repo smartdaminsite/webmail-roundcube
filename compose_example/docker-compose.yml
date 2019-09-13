@@ -1,0 +1,17 @@
+version: '3'
+services:
+  zabbix_server:
+    ports:
+      - 9091:8080
+    image: smartdminsite/zabbix-server:latest
+    extra_hosts:
+      local-db: ${RC_DB_HOST}
+    environment:
+      - RC_DB_USER=${RC_DB_USER}
+      - RC_DB_PASSWORD=${RC_DB_PASSWORD}
+      - RC_DB_NAME=${RC_DB_NAME}
+      - RC_DB_HOST=local-db
+      - MAIL_SERVER_HOST=${MAIL_SERVER_HOST}
+      - SIEVE_HOST=${SIEVE_HOST}
+      - SIEVE_PORT=${SIEVE_PORT}
+    restart: always
