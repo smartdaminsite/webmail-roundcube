@@ -3,7 +3,7 @@ services:
   zabbix_server:
     ports:
       - 9091:8080
-    image: smartdminsite/zabbix-server:latest
+    image: smartdminsite/webmail-roundcube:latest
     extra_hosts:
       local-db: ${RC_DB_HOST}
     environment:
